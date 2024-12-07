@@ -6,7 +6,7 @@ const Navbar = () => {
 
   return (
     <nav className={`navbar ${theme}`}>
-      <img src="../../public/DH.ico" alt="DH" className="logo" />
+      <img src="/DH.ico" alt="DH" className="logo" />
       <div className="nav-links">
         <Link to="/">Home</Link>
         <Link to="/favs">Favs</Link>
