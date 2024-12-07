@@ -1,12 +1,16 @@
-import React from 'react'
-
 const Footer = () => {
   return (
-    <footer>
+    <footer className="footer">
+      <div className="powered-by">
         <p>Powered by</p>
-        <img src="./img/DH.png" alt='DH-logo' />
+        <img src="../../public/images/DH.png" alt="DH-logo" />
+        <img src="../../public/images/ico-facebook.png" alt="Facebook" />
+        <img src="../../public/images/ico-instagram.png" alt="Instagram" />
+        <img src="../../public/images/ico-tiktok.png" alt="TikTok" />
+        <img src="../../public/images/ico-whatsapp.png" alt="WhatsApp" />
+      </div>
     </footer>
-  )
-}
+  );
+};
 
-export default Footer
+export default Footer;

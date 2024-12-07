@@ -1,19 +1,45 @@
-import React from 'react'
-
-
-//Este componente debera ser estilado como "dark" o "light" dependiendo del theme del Context
+import { useParams } from "react-router-dom";
+import { useCharStates } from "../Components/utils/global.context";
+import { Link } from "react-router-dom";
 
 const Detail = () => {
- 
-  // Consumiendo el parametro dinamico de la URL deberan hacer un fetch a un user en especifico
+  const { id } = useParams();
+  const {
+    state: { chars },
+  } = useCharStates();
+
+  const char = chars.find((item) => item.id === parseInt(id));
+
+  if (!char) return <p>🔍 Dentista no encontrado</p>;
 
   return (
-    <>
-      <h1>Detail Dentist id </h1>
-      {/* aqui deberan renderizar la informacion en detalle de un user en especifico */}
-      {/* Deberan mostrar el name - email - phone - website por cada user en especifico */}
-    </>
-  )
-}
+    <div className="detail-container">
+      <img src="/images/doctor.jpg" alt={`Dr. ${char.name}`} />
+      <h2>Dr. {char.name}</h2>
+      <div className="detail-info">
+        <p>
+          <strong>Username:</strong> {char.username}
+        </p>
+        <p>
+          <strong>Email:</strong> {char.email}
+        </p>
+        <p>
+          <strong>Teléfono:</strong> {char.phone}
+        </p>
+        <p>
+          <strong>Dirección:</strong> {char.address?.city},{" "}
+          {char.address?.street}
+        </p>
+        <p>
+          <strong>Empresa:</strong> {char.company?.name}
+        </p>
+      </div>
 
-export default Detail
+      <Link to="/" className="back-link">
+        Regresar
+      </Link>
+    </div>
+  );
+};
+
+export default Detail;

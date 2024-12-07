@@ -1,109 +1,232 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  font-family: Arial, sans-serif;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
-.favButton{
-  background-color: rgba(136, 136, 136, 0.116);
-  padding: 10px;
-  border: none;
-  width: 100%;
-  cursor: pointer;
-}
 
-h1{
+h1 {
   text-align: center;
 }
 
-nav{
+.navbar {
   display: flex;
-  width: 80vw;
-  justify-content: flex-start;
+  align-items: center;
+  justify-content: space-between;
   padding: 1rem;
+  background-color: #fff;
+  box-shadow: 0 4px 5px rgba(0, 0, 0, 0.3);
 }
 
-a{
-  color: #000;
-  text-decoration: none;
-  margin: 5px;
-  cursor: pointer;
+.logo {
+  height: 40px;
+  width: 40px;
+  object-fit: cover;
 }
-a:hover{
-  color: rgb(136, 136, 136);
-} 
 
-footer {
+.nav-links {
   display: flex;
   justify-content: center;
-  text-align: center;
-  padding: 2rem;
-  position: relative;
-  bottom: 0;
-  width: 90%;
-  height: 40px;
-  margin-top: 2rem;
+  align-items: center;
+  flex: 1;
 }
 
-footer > img{
-  width: 200px;
-  margin: 0;
-}
-footer > p{
-  margin: 0;
-  padding-top: 0.7rem;
+.nav-links a {
+  text-decoration: none;
+  color: #333;
+  padding: 0 1rem;
+  font-weight: bold;
+  transition: color 0.3s ease;
 }
 
-form{
+.nav-links a:hover {
+  color: #007bff;
+}
+
+.footer {
+  background-color: #d6550a;
+  padding: 10px 0;
   display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  width: 300px;
-  height: 100px;
-  margin: 0 auto;
-}
-
-.card{
-  display: flex;
-  justify-content: space-around;
   flex-direction: column;
   align-items: center;
-  width: 200px;
-  padding: 0.5rem 0.5rem 0 0.5rem;
-  border: 0.5px solid rgb(136, 136, 136);
 }
 
-.card:hover{
-  border: 0.5px solid rgb(206, 217, 142);
-}
-
-.card-grid{
+.footer .powered-by {
   display: flex;
-  justify-content: space-evenly;
-  gap: 1rem;
-  width: 90vw;
-  height: auto;
-  flex-wrap: wrap;
-  margin: 0 auto;
+  align-items: center;
+  justify-content: center;
+  padding: 3px 0;
+  background-color: #d6550a;
+  text-align: center;
+  width: 100%;
+  margin-top: 0;
+  box-sizing: border-box;
+}
+
+.footer .powered-by p {
+  color: #fff;
+  font-weight: bold;
+  font-size: 15px;
+  margin-right: 10px;
+}
+
+.footer .powered-by img {
+  width: auto;
+  height: 25px;
+  object-fit: contain;
+  max-width: 100%;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+a:hover {
+  color: #555;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 400px;
+  margin: 20px auto;
+  padding: 20px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  border-radius: 8px;
+}
+
+.center-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+}
+
+body.dark form {
+  background-color: #1e1e1e;
+  color: #fff;
+}
+
+input[type="text"],
+input[type="email"],
+button {
+  background-color: #fff;
+  color: #000;
+}
+
+body.dark input[type="text"],
+body.dark input[type="email"],
+body.dark button {
+  background-color: #012b0a;
+  color: #fff;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+  padding: 20px;
+  margin: 20px auto;
+  max-width: 1200px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 350px;
+  border: 0.5px solid rgb(136, 136, 136);
+  background-color: #fff;
+  overflow: hidden;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  border-color: rgb(206, 217, 142);
+}
+
+.card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.card h3 {
+  padding: 0.5rem;
+  word-break: break-word;
+}
+
+.favButton {
+  background-color: rgba(136, 136, 136, 0.2);
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+p {
+  text-align: center;
+  font-weight: bold;
+}
+
+.detail-container {
+  max-width: 600px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.detail-container img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin: 0 auto 20px;
+  display: block;
+}
+
+.detail-container h2 {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.detail-info {
+  font-size: 18px;
+  padding: 10px;
+}
+
+.detail-info p {
+  margin: 5px;
+  color: #555;
 }
 
 table {
- border-collapse: collapse;
-    border-spacing: 0;
-    width: 100%;
-    display: table;
-    border: 1px solid #ccc;
-
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+  display: table;
+  border: 1px solid #ccc;
 }
 
-td, th {
+td,
+th {
   border: 1px solid #dddddd;
   text-align: left;
   padding: 8px;
@@ -113,10 +236,63 @@ tr:nth-child(even) {
   background-color: #dddddd;
 }
 
-.dark{
+.dark {
   background-color: #12121296;
   color: white;
 }
 .dark > a {
   color: white;
+}
+
+.navbar.light {
+  background-color: #fff;
+  color: #000;
+}
+
+.navbar.dark {
+  background-color: #746969fd;
+  color: #fff;
+}
+
+body.light {
+  background-color: #fff;
+  color: #000;
+}
+
+body.dark {
+  background-color: #222121fd;
+  color: #fff;
+}
+
+.card.dark {
+  background-color: #413f3f;
+  color: #fff;
+  border: 1px solid #333;
+}
+
+.card.light {
+  background-color: #f9f9f9;
+  color: #000;
+  border: 1px solid #ccc;
+}
+
+button {
+  background-color: #85c480;
+  color: #ffffff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+  background-color: #79db79;
+  transform: scale(1.05);
+}
+
+button:active {
+  background-color: #69c566;
+  transform: scale(0.95);
 }
